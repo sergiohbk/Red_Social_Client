@@ -1,0 +1,185 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    /* background: lightblue; */
+}
+
+.main-section {
+    margin: 0 auto;
+    margin-top: 110px;
+    padding: 0;
+}
+
+.modal-content {
+    background: grey;
+    opacity: 0.95;
+    padding: 30px 18px;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group input {
+    height: 42px;
+    border-radius: 5px;
+    border: 0px;
+    font-size: 18px;
+    padding-left: 54px;
+}
+
+#icon-name::before {
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f2bd";
+    font-weight: 900;
+    position: absolute;
+    font-size: 22px;
+    color: #555e60;
+    left: 28px;
+    padding-top: 4px;
+}
+
+#icon-nick::before {
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f11b";
+    font-weight: 900;
+    position: absolute;
+    font-size: 22px;
+    color: #555e60;
+    left: 28px;
+    padding-top: 4px;
+}
+
+#icon-email::before {
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f0e0";
+    font-weight: 900;
+    position: absolute;
+    font-size: 22px;
+    color: #555e60;
+    left: 28px;
+    padding-top: 4px;
+}
+
+#icon-pass::before {
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f084";
+    font-weight: 900;
+    position: absolute;
+    font-size: 22px;
+    color: #555e60;
+    left: 28px;
+    padding-top: 4px;
+}
+
+#icon-pass1::before {
+    font-family: 'Font Awesome\ 5 Free';
+    content: "\f084";
+    font-weight: 900;
+    position: absolute;
+    font-size: 22px;
+    color: #555e60;
+    left: 28px;
+    padding-top: 4px;
+}
+
+#check-politica {
+    color: #c2fbfe;
+}
+
+button {
+    width: 50%;
+    margin: 25px 0 15px;
+}
+
+#btn-re {
+    background: #109110 !important;
+    color: #fff;
+    font-size: 19px;
+    padding: 7px 14px;
+    border-radius: 5px;
+    border-bottom-left-radius: 4px solid #077422;
+}
+
+#btn-re:hover,
+.btn-re:focus {
+    background: #046314 !important;
+}
+
+
+.svg-inline--fa {
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+.forgot {
+    padding: 5px 0 25px;
+}
+
+#politica {
+    color: #94e9ee;
+    text-decoration: none;
+}
+
+#politica:hover {
+    color: #94e9ee;
+}
+
+#logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+#copyright {
+    margin-top: 20px;
+}
+
+.close:not(:disabled):not(.disabled) {
+    margin-right: -103px;
+    margin-top: -39px;
+}
+
+#modal-body {
+    max-height: calc(100% - 120px);
+    overflow-y: scroll;
+}
+
+#modal-dialog,
+#modal-content {
+    height: 100%;
+    background: #afb5b6;
+    height: 500px;
+}
+
+
+#check-politica{
+    /* margin-left: 100px !important; */
+    margin-top: 15px;
+    color: #000000;
+}
+
+/* OCULTA EL SCROLL IZQUIERDO DEL MODAL */
+.modal-open .modal{
+    overflow-y: hidden !important;
+}
+
+#parrafo-privacidad{
+    font-size: 18px;
+}
+
+#font-name, #font-caracteres, #font-emailValid, #font-condiciones{
+    margin-top: 8px;
+    font-size: 18px;
+    color: rgb(201, 15, 15) !important;
+}
+
+#font-passMatch{
+    padding-top: 2px;
+    font-size: 18px;
+    color: rgb(201, 15, 15) !important;
+}
+
+#a-condiciones{
+    color:rgb(94, 216, 253);
+    margin-left: 4px;
+}

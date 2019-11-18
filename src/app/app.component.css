@@ -1,0 +1,109 @@
+header {
+    background: #448fd4;
+    top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* position:fixed; */
+    z-index:99;
+    width: 100%;
+}
+
+header .logo img {
+    width: 80px;
+}
+
+/* Buscar */
+header .buscar form input[type="text"] {
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    font-size: 12px;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 3px 0 0 3px;
+    color: #6d6d6d;
+    font-family: 'Open-Sans', sans-serif;
+}
+
+header .buscar form button {
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    font-size: 12px;
+    padding: 0 10px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 0 3px 3px 0;
+    color: #6d6d6d;
+    cursor: pointer;
+}
+
+header .buscar form button:hover {
+    background: #0084ff;
+    color: #ffffff;
+}
+
+/* Menu */
+header .menu {
+    padding: 0;
+}
+
+header .menu a {
+    color: rgb(255, 255, 255, .8);
+    text-decoration: none;
+}
+
+header .menu a:hover {
+    color: #ffffff;
+}
+
+@media screen and (max-width: 575px) {
+    header .menu {
+        padding: 0 15px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    header .menu #icon {
+        display: none;
+    }
+}
+
+
+#img-profile {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.p {
+    margin-left: 10px;
+}
+
+#color-letras {
+    color: black;
+    font-family: 'Open-Sans', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#color-letras:hover {
+    color: #0084ff;
+    font-size: 23px;
+}
+
+.modal-header {
+    background: #0084ff;
+}
+
+.modal {
+    -webkit-border-radius: 50px !important;
+    -moz-border-radius: 50px !important;
+    border-radius: 50px !important;
+}

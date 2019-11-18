@@ -1,0 +1,280 @@
+<!-- <div  class = "col-lg-5">
+    <h1 class="h1-strong">{{title}}</h1>
+
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Se ha registrado correctamente, <a [routerLink] = "['/login']">Identificate</a>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        Error al registrate, es posible que tu email o nick ya esté en uso, intentalo con otros datos. 
+    </div>
+
+    <form #registerForm="ngForm" (ngSubmit)="onsubmit(registerForm)" class="col-lg 12">
+       NOMBRE -->
+<!-- <p>
+            <label>Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required>
+            <span *ngIf="!name.valid && name.touched">
+                El nombre es obligatorio
+            </span>
+        </p> -->
+
+<!-- APELLIDOS -->
+<!-- <p>
+            <label>Apellidos</label>
+            <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required>
+            <span *ngIf="!surname.valid && surname.touched">
+                Los apellidos son obligatorios
+            </span>
+        </p> -->
+
+<!-- NICK -->
+<!-- <p>
+            <label>Apodo</label>
+            <input type="text" name="nick" #nick="ngModel" [(ngModel)]="user.nick" class="form-control" required>
+            <span *ngIf="!nick.valid && name.nick">
+                El apodo es obligatorio
+            </span>
+        </p> -->
+
+<!-- CORREO ELECTRONICO -->
+<!-- <p>
+            <label>Correo electrónico</label>
+            <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"> 
+            <span *ngIf="!email.valid && email.touched">
+                El correo electrónico no es valido
+            </span>
+        </p> -->
+
+<!-- CONTRASEÑA -->
+<!-- <p> -->
+<!-- <label>Contraseña</label>
+            <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" class="form-control"
+                required>
+            <span *ngIf="!password.valid && password.touched">
+                La contraseña es obligatoria
+            </span>
+        </p>
+
+        <input type="submit" value="{{title}}" class="btn btn-success" [disabled]="!registerForm.form.valid" />
+    </form>
+</div> -->
+
+<body>
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        Error al registrate, es posible que tu email o nick ya esté en uso, intentalo con otros datos.
+    </div>
+
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Se ha registrado correctamente, <a [routerLink]="['/login']">Identificate</a>
+    </div>
+
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8 main-section">
+
+            <!-- <div class="col-12">
+                <img src="logo.png" id="logo">
+            </div> -->
+
+            <div class="modal-content">
+                <form [formGroup]="miFormulario" (ngSubmit)="onsubmit()" novalidate="" class="col-12">
+                    <!-- Nombre -->
+                    <div class="form-group" id="icon-name">
+                        <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre"
+                            name="nombre">
+
+                        <div *ngIf="enviado && f.nombre.errors">
+                            <div id="font-name" *ngIf="f.nombre.errors.required">El nombre es obligatorio</div>
+                        </div>
+
+                        <div *ngIf="enviado && f.nombre.errors">
+                            <div id="font-caracteres" *ngIf="f.nombre.errors.minlength"> Minimo 4 caracteres</div>
+                            <div id="font-caracteres" *ngIf="f.nombre.errors.maxlength"> máximo 15 caracteres</div>
+                        </div>
+                    </div>
+
+                    <!-- NICK -->
+                    <div class="form-group" id="icon-nick">
+                        <input class="form-control" type="text" placeholder="Nick" formControlName="nick" name="nick">
+
+                        <div *ngIf="enviado && f.nick.errors">
+                            <div id="font-name" *ngIf="f.nick.errors.required">El nick es obligatorio</div>
+                            <div id="font-caracteres" *ngIf="f.nick.errors.minlength"> Minimo 4 caracteres</div>
+                            <div id="font-caracteres" *ngIf="f.nick.errors.maxlength"> Máximo 15 caracteres</div>
+                        </div>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="form-group" id="icon-email">
+                        <input class="form-control" type="text" placeholder="Email" formControlName="correo"
+                            name="correo">
+                        <div *ngIf="enviado && f.correo.errors" class="text-danger">
+                            <div id="font-name" *ngIf="f.correo.errors.required">El email es obligatorio</div>
+                            <div id="font-emailValid" *ngIf="f.correo.errors.email">Email no valido</div>
+                        </div>
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="form-group" id="icon-pass">
+                        <input type="password" name="password" formControlName="password" class="form-control"
+                            placeholder="Contraseña">
+                    </div>
+
+                    <div class="form-group" id="icon-pass">
+                        <input type="password" name="password2" formControlName="password2" class="form-control"
+                            placeholder="Contraseña">
+                        <div *ngIf="enviado && f.password.errors" class="text-danger">
+                            <div id="font-name" *ngIf="f.password.errors.required">La contraseña es obligatoria</div>
+                            <div id="font-caracteres" *ngIf="f.password.errors.minlength">Minimo 8
+                                caracteres</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" *ngIf="miFormulario.errors?.sonIguales  && enviado">
+                         <div id="font-passMatch" class="text-danger">Las contraseñas deben ser iguales</div>
+                    </div>
+
+                    <div>
+                        <!-- <a href="" data-toggle="modal" data-target="#modal-politica" id="politica">Policita de
+                            privacidad</a> -->
+                        <!-- <span>Aceptas <a href="" id="politica">condiciones</a></span> -->
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox form-inline" id="check-politica">
+                                <input type="checkbox" class="custom-control-input" id="customCheck" name="condiciones"
+                                    formControlName="condiciones">
+                                <label id="politica" class="custom-control-label" id="check-politica"
+                                    for="customCheck">Aceptas la politica de <a href="" data-toggle="modal" data-target="#modal-politica" id="politica"><span
+                                            id="a-condiciones">privacidad</span></a></label>
+                                          
+                                <div *ngIf="enviado && f.condiciones.errors">
+                                    <div id="font-condiciones" *ngIf="f.condiciones.errors.required">Debes aceptar las condiciones</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn" id="btn-re">Registrarse</button>
+                </form>
+
+            </div> <!-- Fin del contenido del modal -->
+
+            <footer id="copyright">
+                <small>&copy; Copyright 2019, RoleMaster</small>
+            </footer>
+        </div>
+    </div>
+
+    <div class="modal fade col-12" id="modal-politica">
+        <div class="modal-dialog" id="modal-dialog">
+            <div class="modal-content" id="modal-content">
+                <div class="modal-header">
+                    <!-- <button type="button" class="close" data-dismiss="modal" style="">&times;</button> -->
+                    <h4>Politica de privacidad</h4>
+                </div>
+
+                <div class="modal-body" id="modal-body">
+                    <label for="">
+                        <p>El presente Política de Privacidad establece los términos en que usa y protege la información
+                            que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía
+                            está
+                            comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los
+                            campos
+                            de información personal con la cual usted pueda ser identificado, lo hacemos asegurando que
+                            sólo
+                            se empleará de acuerdo con los términos de este documento. Sin embargo esta Política de
+                            Privacidad puede cambiar con el tiempo o ser actualizada por lo que le recomendamos y
+                            enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos
+                            cambios.</p>
+
+                        <b id="parrafo-privacidad">Información que es recogida</b>
+
+                        <p>Nuestro sitio web podrá recoger información personal por ejemplo: Nombre, información de
+                            contacto como su dirección de correo electrónica e información demográfica. Así mismo cuando
+                            sea
+                            necesario podrá ser requerida información específica para procesar algún pedido o realizar
+                            una
+                            entrega o facturación.</p>
+
+                        <b id="parrafo-privacidad">Uso de la información recogida</b>
+
+                        <p>Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible,
+                            particularmente para mantener un registro de usuarios, de pedidos en caso que aplique, y
+                            mejorar
+                            nuestros productos y servicios. Es posible que sean enviados correos electrónicos
+                            periódicamente
+                            a través de nuestro sitio con ofertas especiales, nuevos productos y otra información
+                            publicitaria que consideremos relevante para usted o que pueda brindarle algún beneficio,
+                            estos
+                            correos electrónicos serán enviados a la dirección que usted proporcione y podrán ser
+                            cancelados
+                            en cualquier momento.</p>
+
+                        <p id="parrafo">está altamente comprometido para cumplir con el compromiso de mantener su
+                            información segura.
+                            Usamos los sistemas más avanzados y los actualizamos constantemente para asegurarnos que no
+                            exista ningún acceso no autorizado.</p>
+
+                        <b id="parrafo-privacidad">Cookies</b>
+
+                        <p>Una cookie se refiere a un fichero que es enviado con la finalidad de solicitar permiso para
+                            almacenarse en su ordenador, al aceptar dicho fichero se crea y la cookie sirve entonces
+                            para
+                            tener información respecto al tráfico web, y también facilita las futuras visitas a una web
+                            recurrente. Otra función que tienen las cookies es que con ellas las web pueden reconocerte
+                            individualmente y por tanto brindarte el mejor servicio personalizado de su web.</p>
+
+                        <p>Nuestro sitio web emplea las cookies para poder identificar las páginas que son visitadas y
+                            su
+                            frecuencia. Esta información es empleada únicamente para análisis estadístico y después la
+                            información se elimina de forma permanente. Usted puede eliminar las cookies en cualquier
+                            momento desde su ordenador. Sin embargo las cookies ayudan a proporcionar un mejor servicio
+                            de
+                            los sitios web, estás no dan acceso a información de su ordenador ni de usted, a menos de
+                            que
+                            usted así lo quiera y la proporcione directamente, visitas a una web . Usted puede aceptar o
+                            negar el uso de cookies, sin embargo la mayoría de navegadores aceptan cookies
+                            automáticamente
+                            pues sirve para tener un mejor servicio web. También usted puede cambiar la configuración de
+                            su
+                            ordenador para declinar las cookies. Si se declinan es posible que no pueda utilizar algunos
+                            de
+                            nuestros servicios.</p>
+
+                        <b id="parrafo-privacidad">Enlaces a Terceros</b>
+
+                        <p>Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una
+                            vez
+                            que usted de clic en estos enlaces y abandone nuestra página, ya no tenemos control sobre al
+                            sitio al que es redirigido y por lo tanto no somos responsables de los términos o privacidad
+                            ni
+                            de la protección de sus datos en esos otros sitios terceros. Dichos sitios están sujetos a
+                            sus
+                            propias políticas de privacidad por lo cual es recomendable que los consulte para confirmar
+                            que
+                            usted está de acuerdo con estas.</p>
+
+                        <b id="parrafo-privacidad">Control de su información personal</b>
+
+                        <p>En cualquier momento usted puede restringir la recopilación o el uso de la información
+                            personal
+                            que es proporcionada a nuestro sitio web. Cada vez que se le solicite rellenar un
+                            formulario,
+                            como el de alta de usuario, puede marcar o desmarcar la opción de recibir información por
+                            correo
+                            electrónico. En caso de que haya marcado la opción de recibir nuestro boletín o publicidad
+                            usted
+                            puede cancelarla en cualquier momento.</p>
+
+                        <p>Esta compañía no venderá, cederá ni distribuirá la información personal que es recopilada sin
+                            su
+                            consentimiento, salvo que sea requerido por un juez con un orden judicial.</p>
+
+                        <p>Se reserva el derecho de cambiar los términos de la presente Política de Privacidad en
+                            cualquier
+                            momento.</p>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

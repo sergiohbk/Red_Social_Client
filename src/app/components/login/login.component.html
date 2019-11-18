@@ -1,0 +1,51 @@
+<div class="alert alert-danger center-block" *ngIf="status == 'error'">
+    Email y/o contraseña incorrectos.
+</div>
+
+<body>
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8 main-section">
+            <!-- <div class="col-12">
+                <img src="../../../assets/logo.png" id="logo">
+            </div> -->
+            <div class="modal-content">
+
+                <div class="col-12 user-img">
+                    <img src="../../../assets/userP.png">
+                </div>
+
+                <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="col-12">
+                    <div class="form-group">
+                        <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control"
+                            placeholder="Correo electrónico" required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$">
+
+                        <span id="email-error" *ngIf="!email.valid && email.touched">
+                            Correo electrónico no es valido.
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password"
+                            class="form-control" placeholder="Contraseña" required>
+                        <span id="pass-error" *ngIf="!password.valid && password.touched">
+                            La contraseña es obligatoria
+                        </span>
+                    </div>
+
+                    <button type="submit" class="btn" [disabled]="!loginForm.form.valid"><i
+                            class="fas fa-sign-in-alt"></i>Entrar</button>
+                </form>
+
+                <div class="col-12 forgot">
+                    <a href="#">¿Has olvidado la contraseña?</a>
+                </div>
+
+            </div> <!-- Fin del contenido del modal -->
+
+            <footer id="copyright">
+                <small>&copy; Copyright 2019, RoleMaster</small>
+            </footer>
+        </div>
+    </div>
+</body>

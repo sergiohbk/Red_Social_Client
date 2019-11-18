@@ -1,0 +1,78 @@
+<!-- <div class="navigation col-lg-12">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" id="icon" href="#">{{ title }}</a> -->
+
+<!-- Inicio menu desplegable -->
+<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+<!-- Fin menu desplegable -->
+
+<!-- <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto" *ngIf="identity" id="items-menu">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['./home']" [routerLinkActive]="['active']"><i class="fas fa-home"></i>
+            Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['./TimeLine']" [routerLinkActive]="['active']"> <i
+              class="fas fa-list-ul"></i> TimeLine</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['./gente']" [routerLinkActive]="['active']"> <i class="fas fa-users"></i>
+            Gente</a>
+        </li>
+      </ul> -->
+<!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form> -->
+
+<!-- <ul class="navbar-nav ml-auto" *ngIf="!identity">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['./login']" [routerLinkActive]="['active']"> <i
+              class="fas fa-sign-in-alt"></i> Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['./registro']" [routerLinkActive]="['active']"> <i class="fas fa-user"></i>
+            Registro</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav" *ngIf="identity">
+        <li class="avatar"> -->
+<!-- Cargar imagen de usuario -->
+<!-- <img src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity && identity.image">
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            {{identity.name + ' ' + identity.surname}} <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li id="profile">
+              <a>
+                <span class="fas fa-user"> Mi perfil</span>
+              </a>
+            </li>
+
+            <li id="data">
+              <a [routerLink]="['/mis-datos']">
+                <span class="fas fa-cog"> Mis datos</span>
+              </a>
+            </li>
+
+            <li class="pointer" id="log-out" (click)="logOut()">
+              <a>
+                <span class="fas fa-sign-out-alt"> Cerrar sesión</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div> -->
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>

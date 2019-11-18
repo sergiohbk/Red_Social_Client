@@ -1,0 +1,60 @@
+<script>
+    //Cuando la página esté cargada completamente
+    $(document).ready(function() {
+        //Cada 10 segundos se ejecutará la función refrescar
+        setTimeout(refrescar, 10000);
+    });
+
+
+    function refrescar() {
+        //Actualiza las publicaciones
+        $("#refresh-publi").load("timeline.component.html");
+    }
+</script>
+
+<div class="col-lg-8">
+    <h1>{{ title }}</h1>
+</div>
+<!-- Cargamos la vista de publications de final ponerlo en home -->
+<!-- <publications></publications> -->
+
+
+<div id="publications">
+    <div *ngFor="let publication of publications" class="item-publication">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="image-user float-left">
+                    <a>
+                        <img src="{{ url + 'get-image-user/' + publication.user.image }}" *ngIf="publication.user.image">
+                        <img src="assets/user.jpg" *ngIf="!publication.user.image">
+                    </a>
+                </div>
+
+                <h4>{{ publication.user.name }}</h4>
+
+                <div class="date">
+                    {{ (publication.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}
+                </div>
+
+                <div class="publication-text float-left">
+                    {{ publication.text }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="col-lg-12 text-center">
+    <p>
+        <button class="btn btn-success" (click)="viewMore()" *ngIf="!noMore">
+            Ver más publicaciones
+        </button>
+    </p>
+</div>
+<!-- <sidebar></sidebar> -->
+<sidebar class="refresh-publi" (sended)="refresh($event)"></sidebar>
+
+
+<div class="clearfix"></div>

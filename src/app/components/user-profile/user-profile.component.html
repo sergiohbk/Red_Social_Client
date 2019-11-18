@@ -1,0 +1,56 @@
+<!-- <div class="container-fluid">
+    <div class="row"> -->
+<!-- <div class="col-md-4"> -->
+<div class="card mt-2">
+
+    <!-- <img class="rounded-circle img-fluid mx-auto img-thumbnail d-block mt-3" src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image">
+        <img class="rounded-circle img-fluid mx-auto img-thumbnail d-block mt-3" src="assets/user.jpg" *ngIf="!identity.image"> -->
+
+    <ngx-avatar class="text-center" src="{{ url + 'get-image-user/' + identity.image }}" size="30% " [round]="true" *ngIf="identity.image"></ngx-avatar>
+    <ngx-avatar class="text-center" src="assets/user.jpg" size="30% " [round]="true" *ngIf="!identity.image"></ngx-avatar>
+
+    <h5 class="text-center mt-3 " id="letraColor ">{{ identity.name }} ({{ identity.nick }})</h5>
+    <div class="text-center ">
+        <div class="row ">
+            <div class="col-6 ">
+                <span id="letraColor ">Seguidores: {{ stats.followed }}</span>
+            </div>
+            <div class="col-6 ">
+                <span id="letraColor ">Siguiendo: {{ stats.following }}</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 ">
+                <span id="letraColor ">Publicaciones: {{ stats.publications }}</span>
+            </div>
+            <div class="col-6 ">
+                <span id="letraColor ">Me gusta: 35</span>
+                <!-- {{ stats.like }} falta funcion de los lijes-->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 text-center mt-3 ">
+        <span id="letraColor ">Tienes <span id="colorNotification "><b>5</b></span> mensajes sin leer</span>
+    </div>
+    <!-- </div>
+    </div> -->
+
+    <!-- <div class="col-md-6"> -->
+    <!-- <div class="alert alert-success" *ngIf="status == 'success'">
+                Publicado correctamente
+            </div>
+            <div class="alert alert-danger" *ngIf="status == 'error'">
+                Error al publicar
+            </div> -->
+    <!-- 
+        <form #newPubForm="ngForm" class="form-inline form-group mt-2">
+
+            <textarea name="text" placeholder="¿Que estas pensando hoy?"></textarea>
+
+            <button type="submit" class="btn btn-success">Publicar</button>
+        </form>
+    </div>
+</div> -->
+    <!-- </div> -->

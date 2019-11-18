@@ -1,0 +1,342 @@
+/* GENERALES */
+
+
+/* .h1-strong{
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 13px;
+    padding-top: 10px;
+    margin-bottom: 25px;
+    padding-bottom: 15px; */
+
+
+/* border-bottom: 1px solid #eee; */
+
+
+/* } */
+
+
+/* INICIO ICONO ROLEMASTER */
+
+
+/* .navigation #icon{
+    font-size: 30px;
+} */
+
+
+/* FIN INICIO ICONO ROLEMASTER */
+
+
+/* a.nav-link{
+    padding: 15px !important;
+} */
+
+
+/* INICIO MENÚ HORIZONTAL */
+
+
+/* .navigation{
+    padding: 0px !important;
+}
+
+.navigation .navbar{
+    border-radius: 0px !important;  
+    background: #04CDDD !important;
+    border: none;
+} */
+
+
+/* Al pasar el raton por encima nos situa en el elemento que estamos actualmente */
+
+
+/* .active {
+    background: rgb(48, 183, 236) !important;    
+}  */
+
+
+/* Todo lo que este dentro de navbar de color blanco */
+
+
+/* .navigation .navbar *{
+    color:rgb(255, 255, 255) !important;
+    text-decoration: none;
+ }
+
+ .navigation #items-menu a:hover{
+    background: rgb(48, 183, 236) !important;
+ } 
+
+ .navigation .avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin-right: 10px;
+ }
+
+.navigation .avatar img{
+    height: 38px;
+    width: 38px;
+ } */
+
+
+/* FIN MENÚ HORIZONTAL */
+
+
+/* INICIO MENÚ VERTICAL */
+
+
+/* .navigation .navbar .dropdown-menu *{ 
+    color:black !important;
+ } 
+
+ .navigation .dropdown.open{
+    color:black !important;     
+ }
+
+ nav.navbar.navbar-expand-lg.navbar-light.bg-light{
+     padding-top: 0px;
+     padding-bottom: 0px;     
+ }
+
+ a.dropdown-toggle{
+     margin-right: 100px !important;
+ }
+
+ li.dropdown{
+    margin-top: 5px !important;
+ }
+
+ a.dropdown-toggle{
+    margin-right: 100px !important;
+}
+
+ ul.dropdown-menu.show{
+    border: 0px;
+    margin-top: 15px;  
+    box-shadow: 5px 8px 8px #888888;
+ }
+
+ .navigation .dropdown-menu #profile:hover{
+    background: rgb(48, 183, 236) !important;    
+ }
+
+ .navigation .dropdown-menu #data:hover {
+    background: rgb(48, 183, 236) !important;  
+}
+
+.navigation .dropdown-menu #log-out:hover{
+    background: rgb(48, 183, 236) !important;     
+}
+
+span.fas.fa-user{
+    margin-left: 10px;
+}
+
+span.fas.fa-cog{
+    margin-left: 10px;
+}
+
+span.fas.fa-sign-out-alt{
+    margin-left: 10px;
+} */
+
+
+/* INICIO FUNCIONALIDAD CERRAR SESION */
+
+
+/* .pointer{
+        cursor: pointer;
+    } */
+
+
+/* FIN FUNCIONALIDAD CERRAR SESION */
+
+
+/* FIN MENÚ VERTICAL */
+
+
+/* INICIO ESTILO IMAGEN EN SECCIÓN GENTE */
+
+.people .item-user .image-user img {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    display: block;
+    border-radius: 100px;
+    border: 1.5px solid #000000;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+
+/* FIN ESTILO IMAGEN EN SECCIÓN GENTE */
+
+
+/* INICIO PESTAÑA USUARIOS */
+
+#gente .btn-success {
+    margin-top: -83px;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    margin-top: -83px;
+    margin-right: 10px;
+}
+
+
+/* .btn-default{
+    margin-top: -83px;
+    margin-right: 10px;
+    background: rgb(212, 206, 207) !important;
+ } */
+
+
+/* .btn-primary:hover{
+    background:rgb(192, 29, 51) !important;
+ } */
+
+p.pos-name {
+    margin-top: 40px;
+}
+
+a.pos-name1 {
+    margin-left: 40px;
+}
+
+
+/* div.card-body{
+     padding: 15px;
+ } */
+
+
+/* FIN PESTAÑA USUARIOS */
+
+
+/* INICIO PAGINACIÓN */
+
+
+/* .container{
+    margin-top: 20px; 
+} */
+
+.page-item:first-child .page-link {
+    margin-left: 500px !important;
+}
+
+a.page-link {
+    background: #04CDDD !important;
+    color: #fff;
+}
+
+a.page-link:hover {
+    color: rgb(0, 0, 0);
+}
+
+
+/* FIN PAGINACIÓN */
+
+
+/* INICIO PERFIL USUARIO */
+
+
+/* .card{
+        margin-top: 10px;
+    } */
+
+img.rounded-circle {
+    width: 9em;
+    height: 9em;
+}
+
+#nickname {
+    font-size: 25px;
+    /* margin-left: 5px; */
+    margin-top: 55px;
+    font-weight: bold;
+    color: #000000;
+}
+
+#nickname:hover {
+    color: rgb(48, 183, 236);
+}
+
+#nickname-a {
+    text-decoration: none;
+}
+
+
+/* #framework-profile{
+        width: 330px;
+    } */
+
+.follows-data {
+    margin-top: 12px;
+}
+
+.data {
+    color: rgb(0, 121, 36);
+}
+
+#link {
+    color: #000000;
+    text-decoration: none;
+}
+
+#link:hover {
+    color: rgb(48, 183, 236);
+}
+
+.stats {
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    font-weight: bold;
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+
+
+/* FIN PERFIL USUARIO */
+
+
+/* INICIO PUBLICACIONES */
+
+
+/* #framework-publication{
+    margin-top: -11px;
+} */
+
+
+/* #framework-pub{
+    resize: none;
+    height: 50px;
+    width: 100% !important;
+}
+
+#icon-camera{
+    font-size: 45px;
+    cursor: pointer;
+}
+
+.image-upload input {
+    display: none;
+}
+
+
+.image-upload {
+    margin-left: 540px;
+    margin-top: -80px;
+} */
+
+
+/* FIN PUBLICACIONES */
+
+
+/* @media (max-width: 720px) { 
+    #nickname{
+        font-size: 20px;  
+    }
+
+} */

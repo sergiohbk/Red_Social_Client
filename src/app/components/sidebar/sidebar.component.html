@@ -1,0 +1,94 @@
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div id="user-card" class="col-3 col-sm-3 col-md-3 col-lg-3 mt-2">
+            <div class="card" id="framework-profile">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-7 col-sm-7 col-12">
+                            <div class="avatar">
+                                <img class="rounded-circle" src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image">
+                                <img src="assets/user.jpg" *ngIf="!identity.image">
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-sm-5 col-12 text-center">
+                            <a href="#" id="nickname-a">
+                                <p id="nickname">{{ identity.nick }}</p> -->
+<!-- {{ identity.name + ' ' + identity.surname }} -->
+<!-- </a>
+                        </div>
+                    </div>
+
+                    <div class="data-profile">
+
+                        <div class="clearFix"></div>
+
+                        <div class="stats text-center" *ngIf="stats">
+                            <div class="follows-data">
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <a href="" id="link"> <span> Siguiendo </span></a>
+                                        <span class="data"> {{ stats.following }} </span> |
+                                        <a href="" id="link"><span> Seguidores </span></a>
+                                        <span class="data"> {{ stats.followed }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="other-data">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <a href="" id="link"><span class="number-stats"> Publicaciones </span></a>
+                                        <span class="data"> {{ stats.publications }} </span> |
+                                        <a href="" id="link"><span> Me gusta </span></a>
+                                        <span class="data">{{stats.like}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+<!-- FORMULARIO PUBLICACIONES -->
+
+<div class="col-5 col-sm-5 col-md-5 col-lg-5 mt-2">
+    <div class="alert alert-success" *ngIf="status == 'success'">
+        Publicado correctamente
+    </div>
+    <div class="alert alert-danger" *ngIf="status == 'error'">
+        Error al publicar
+    </div>
+
+    <form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm); sendPublication($event);" class="form-inline form-group">
+
+        <textarea id="framework-pub" name="text" placeholder="¿Que estas pensando hoy?" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required>
+
+                </textarea>
+
+        <!-- <form [formGroup]="miFormulario" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <textarea id="framework-pub" name="text" formControlName="text"
+                        placeholder="¿Que estas pensando hoy?" class="form-control">
+                    </textarea>
+                </div> -->
+        <!-- <span *ngIf="!text.valid  && text.touched">El texto de la publicación es obligatoria</span> -->
+
+        <!-- <div class="image-upload">
+
+                     <label for="file-input">
+                           <i class="fas fa-camera" id="icon-camera"></i>
+                     </label>
+
+                      <input id="file-input" type="file"  />
+                </div>  -->
+
+        <!-- <p> -->
+        <!-- <label>Subir imagen</label> -->
+        <!-- <input type="file" placeholder="Subir imagen"> -->
+        <!-- </p> -->
+        <button type="submit" class="btn btn-success">Publicar</button>
+    </form>
+</div>
+<!-- </div>
+</div> -->
