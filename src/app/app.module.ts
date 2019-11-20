@@ -25,6 +25,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { BoxPublicationComponent } from './components/box-publication/box-publication.component';
 import { ListaPersonajesComponent } from './components/lista-personajes/lista-personajes.component';
+import { RolesMasActivosComponent } from './components/roles-mas-activos/roles-mas-activos.component';
 
 
 
@@ -46,6 +47,7 @@ import { ListaPersonajesComponent } from './components/lista-personajes/lista-pe
     UserProfileComponent,
     BoxPublicationComponent,
     ListaPersonajesComponent,
+    RolesMasActivosComponent,
 
     
   ],
