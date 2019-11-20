@@ -24,6 +24,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { BoxPublicationComponent } from './components/box-publication/box-publication.component';
+import { ListaPersonajesComponent } from './components/lista-personajes/lista-personajes.component';
 
 
 
@@ -44,6 +45,7 @@ import { BoxPublicationComponent } from './components/box-publication/box-public
     NavbarComponent,
     UserProfileComponent,
     BoxPublicationComponent,
+    ListaPersonajesComponent,
 
     
   ],
