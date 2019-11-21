@@ -41,7 +41,8 @@
     <div class="card mt-2">
         <div class="card-body">
             <div class="row">
-                <div style="margin-bottom: 10px;" class="col-md-2">
+
+                <div style="margin-bottom: 10px;" class="col-3 col-sm-3 col-md-2">
                     <ngx-avatar src="{{ url + 'get-image-user/' + identity.image }}" size="30% " [round]="true" *ngIf="identity.image"></ngx-avatar>
                     <ngx-avatar src="assets/user.jpg" size="100% " [round]="true" *ngIf="!identity.image"></ngx-avatar>
                 </div>
@@ -54,19 +55,32 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 mt-2">
                     {{ publication.text }}
                 </div>
             </div>
 
             <div class="row">
-                <div style="margin-top: 10px;" class=" col-sm-6 col-md-10">
-                    {{ (publication.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}
+
+              <div class="col-sm-12 col-md-6">
+
+                  <div class="dropdown">
+                       <a data-toggle="dropdown"><i style="margin-top: 18px; margin-right:4px;" class="fas fa-cog fa-md"></i></a>
+                       <i style="margin-top: 18px; margin-right:2px;" class="far fa-heart fa-md"></i><span>25</span>
+
+                       <div class="dropdown-menu">
+                           <a class="dropdown-item" href="#">Reportar</a>
+                           <a class="dropdown-item" href="#">Eliminar</a>
+                       </div>
+                   </div>
+
+
+              </div>
+
+                <div style="margin-top: 10px;" class=" col-sm-12 col-md-12">
+                    <span  id="fechaColo">{{ (publication.created_at | amFromUnix) | amLocale:'es' | amTimeAgo }}</span>
                 </div>
 
-                <div class="col-sm-6 col-md-2">
-                    <i style="margin-top: 12px;" class="far fa-heart fa-lg"></i>
-                </div>
             </div>
 
         </div>

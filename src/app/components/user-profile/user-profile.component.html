@@ -6,7 +6,7 @@
     <!-- <img class="rounded-circle img-fluid mx-auto img-thumbnail d-block mt-3" src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image">
         <img class="rounded-circle img-fluid mx-auto img-thumbnail d-block mt-3" src="assets/user.jpg" *ngIf="!identity.image"> -->
 
-    <ngx-avatar class="text-center" src="{{ url + 'get-image-user/' + identity.image }}" size="30% " [round]="true" *ngIf="identity.image"></ngx-avatar>
+    <ngx-avatar class="text-center mt-2" src="{{ url + 'get-image-user/' + identity.image }}" size="30% " [round]="true" *ngIf="identity.image"></ngx-avatar>
     <ngx-avatar class="text-center mt-2" src="assets/user.jpg" size="30% " [round]="true" *ngIf="!identity.image"></ngx-avatar>
 
     <h5 class="text-center mt-3 " id="letraColor ">{{ identity.name }} ({{ identity.nick }})</h5>
