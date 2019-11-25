@@ -2,6 +2,10 @@ textarea{
   resize: none;
 }
 
-#buttonPublication{
-  height: 50px;
+#icon-images{
+  margin-left: 5px;
 }
+
+/* #buttonPublication{
+  height: 50px;
+} */
