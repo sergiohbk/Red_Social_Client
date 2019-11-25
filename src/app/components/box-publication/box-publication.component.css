@@ -3,7 +3,7 @@ textarea{
 }
 
 #icon-images{
-    padding-left: 0px;
+
 }
 
 /* #icon-images{
@@ -41,7 +41,6 @@ textarea{
 
 .image-upload i
 {
-    width: 80px;
     cursor: pointer;
 }
 
