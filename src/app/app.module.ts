@@ -28,7 +28,6 @@ import { ListaPersonajesComponent } from './components/lista-personajes/lista-pe
 import { RolesMasActivosComponent } from './components/roles-mas-activos/roles-mas-activos.component';
 
 
-
 //Metemos los componentes para poder usarlos.
 @NgModule({
   declarations: [
@@ -49,21 +48,21 @@ import { RolesMasActivosComponent } from './components/roles-mas-activos/roles-m
     ListaPersonajesComponent,
     RolesMasActivosComponent,
 
-    
+
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     routing,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     MomentModule,
     AvatarModule
-    
+
   ],
   providers: [
     // appRoutingProviders
-    
+
   ],
   bootstrap: [AppComponent]
 })

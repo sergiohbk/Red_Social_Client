@@ -16,7 +16,7 @@
                     </a>
                 </div>
 
-                <div class="col-12 col-sm-8 col-lg-6 flex-last buscar" *ngIf="identity">
+                <div class="col-12 col-sm-8 col-lg-6 flex-last buscar" *ngIf="auth.loggedIn">
                     <form action="">
                         <div class="row no-gutters align-items-center">
                             <div class="columna col-10">
@@ -32,17 +32,17 @@
                 </div>
 
                 <div class="col-12 col-sm-3 col-md-4 col-lg-4 menu d-flex justify-content-between ml-auto">
-                    <a *ngIf="identity" href="" [routerLink]="['./home']" [routerLinkActive]="['active']"><i class="fas fa-home"></i><span id="icon"> Inicio</span></a>
-                    <a *ngIf="identity" href="" [routerLink]="['./home']" [routerLinkActive]="['active']"><i class="fas fa-network-wired"></i><span id="icon"> Salas</span></a>
-                    <a *ngIf="identity" href="" [routerLink]="['./gente']" [routerLinkActive]="['active']"><i class="fas fa-bell"></i><span id="icon"> Notificaciones</span></a>
+                    <a *ngIf="auth.loggedIn" href="" [routerLink]="['./home']" [routerLinkActive]="['active']"><i class="fas fa-home"></i><span id="icon"> Inicio</span></a>
+                    <a *ngIf="auth.loggedIn" href="" [routerLink]="['./home']" [routerLinkActive]="['active']"><i class="fas fa-network-wired"></i><span id="icon"> Salas</span></a>
+                    <a *ngIf="auth.loggedIn" href="" [routerLink]="['./gente']" [routerLinkActive]="['active']"><i class="fas fa-bell"></i><span id="icon"> Notificaciones</span></a>
 
-                    <a *ngIf="!identity" href="" [routerLink]="['./login']" [routerLinkActive]="['active']"><i class="fas fa-sign-in-alt"></i>
-            <span id="icon"> Login</span></a>
-                    <a *ngIf="!identity" href="" [routerLink]="['./registro']" [routerLinkActive]="['active']"><i class="fas fa-user"></i>
-              <span id="icon"> Registro</span></a>
+                    <a *ngIf="!auth.loggedIn" href="" [routerLink]="['./login']" [routerLinkActive]="['active']"><i class="fas fa-sign-in-alt"></i>
+                      <span id="icon"> Login</span></a>
+                    <a *ngIf="!auth.loggedIn" href="" [routerLink]="['./registro']" [routerLinkActive]="['active']"><i class="fas fa-user"></i>
+                      <span id="icon"> Registro</span></a>
 
-                    <a *ngIf="identity" href="" data-toggle="modal" data-target="#myModal"><i class="fas fa-cog"></i><span
-              id="icon"></span></a>
+                    <a *ngIf="auth.loggedIn" href="" data-toggle="modal" data-target="#myModal"><i class="fas fa-cog"></i><span
+                      id="icon"></span></a>
 
                     <div class="modal fade" id="myModal">
                         <div class="modal-dialog">

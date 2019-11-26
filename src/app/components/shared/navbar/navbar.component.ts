@@ -2,6 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { UserService } from '../../../services/user.service';
 import { GLOBAL } from '../../../services/global';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,7 +18,8 @@ export class NavbarComponent implements OnInit, DoCheck{
   constructor(
     private _route: ActivatedRoute,
     private _router: Router,
-    private _userService:UserService
+    private _userService:UserService,
+    public auth: AuthService
   ){
     this.title = "RoleMaster";
     this.url = GLOBAL.url;

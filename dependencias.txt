@@ -1,0 +1,6 @@
+ngx-moment
+ngx-avatar
+boostrap
+jquery
+@auth/auth0-spa-js
+moment
