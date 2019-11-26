@@ -2,6 +2,48 @@ textarea{
   resize: none;
 }
 
-#buttonPublication{
-  height: 50px;
+#icon-images{
+
 }
+
+/* #icon-images{
+  margin-left: 5px;
+} */
+
+#p{
+  position: relative;
+  color: #aaa;
+  font-size: 16px;
+}
+
+
+#p textarea {
+  width: 730px;
+  height: 32px;
+
+  background: #fcfcfc;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+}
+
+#p textarea { text-indent: 32px;}
+#p .fa-camera-retro {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload i
+{
+    cursor: pointer;
+}
+
+/* #buttonPublication{
+  height: 50px;
+} */
