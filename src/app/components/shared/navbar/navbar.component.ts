@@ -19,16 +19,15 @@ export class NavbarComponent implements OnInit, DoCheck{
     private _route: ActivatedRoute,
     private _router: Router,
     private _userService:UserService,
-    public auth: AuthService
+    public auth:AuthService
   ){
     this.title = "RoleMaster";
     this.url = GLOBAL.url;
   }
 
   ngOnInit(){
-    this.identity = this._userService.getIdentity();
+    //this.identity = this._userService.getIdentity();
   }
-
   //refrescar menus de la pantalla cuando nos logueamos.
   ngDoCheck(){
     this.identity = this._userService.getIdentity();

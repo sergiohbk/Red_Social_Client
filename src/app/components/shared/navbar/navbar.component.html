@@ -36,7 +36,7 @@
                     <a *ngIf="auth.loggedIn" href="" [routerLink]="['./home']" [routerLinkActive]="['active']"><i class="fas fa-network-wired"></i><span id="icon"> Salas</span></a>
                     <a *ngIf="auth.loggedIn" href="" [routerLink]="['./gente']" [routerLinkActive]="['active']"><i class="fas fa-bell"></i><span id="icon"> Notificaciones</span></a>
 
-                    <a *ngIf="!auth.loggedIn" href="" [routerLink]="['./login']" [routerLinkActive]="['active']"><i class="fas fa-sign-in-alt"></i>
+                    <a *ngIf="!auth.loggedIn" (click)="auth.login()" [routerLinkActive]="['active']"><i class="fas fa-sign-in-alt"></i>
                       <span id="icon"> Login</span></a>
                     <a *ngIf="!auth.loggedIn" href="" [routerLink]="['./registro']" [routerLinkActive]="['active']"><i class="fas fa-user"></i>
                       <span id="icon"> Registro</span></a>

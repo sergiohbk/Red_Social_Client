@@ -14,7 +14,7 @@ export class AuthService {
     createAuth0Client({
       domain: "dev-v11492p0.auth0.com",
       client_id: "X5zMSXgWko1OJGJi7LA2HMBAMkJAUYSY",
-      redirect_uri: `${window.location.origin}`
+      redirect_uri: `https://localhost:4200/callback`
     })
   ) as Observable<Auth0Client>).pipe(
     shareReplay(1), // Every subscription receives the same shared value
@@ -78,7 +78,7 @@ export class AuthService {
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log in
       client.loginWithRedirect({
-        redirect_uri: `${window.location.origin}`,
+        redirect_uri: `https://localhost:4200/callback`,
         appState: { target: redirectPath }
       });
     });

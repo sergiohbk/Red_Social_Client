@@ -26,7 +26,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { BoxPublicationComponent } from './components/box-publication/box-publication.component';
 import { ListaPersonajesComponent } from './components/lista-personajes/lista-personajes.component';
 import { RolesMasActivosComponent } from './components/roles-mas-activos/roles-mas-activos.component';
+import { CallbackComponent } from './components/callback/callback.component';
 
+import {AuthService} from './services/auth.service';
 
 //Metemos los componentes para poder usarlos.
 @NgModule({
@@ -47,6 +49,7 @@ import { RolesMasActivosComponent } from './components/roles-mas-activos/roles-m
     BoxPublicationComponent,
     ListaPersonajesComponent,
     RolesMasActivosComponent,
+    CallbackComponent
 
 
   ],
@@ -57,12 +60,12 @@ import { RolesMasActivosComponent } from './components/roles-mas-activos/roles-m
     HttpClientModule,
     ReactiveFormsModule,
     MomentModule,
-    AvatarModule
+    AvatarModule,
 
   ],
   providers: [
     // appRoutingProviders
-
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
