@@ -8,6 +8,8 @@ import { AvatarModule } from 'ngx-avatar';
 
 // appRoutingProviders
 import { routing } from './app.routing';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './services/interceptor.service';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -29,6 +31,8 @@ import { RolesMasActivosComponent } from './components/roles-mas-activos/roles-m
 import { CallbackComponent } from './components/callback/callback.component';
 
 import {AuthService} from './services/auth.service';
+import { UserService } from './services/user.service';
+import { RouterModule } from '@angular/router';
 
 //Metemos los componentes para poder usarlos.
 @NgModule({
@@ -61,11 +65,20 @@ import {AuthService} from './services/auth.service';
     ReactiveFormsModule,
     MomentModule,
     AvatarModule,
-
+    RouterModule
+  ],
+  exports:[
+      RouterModule
   ],
   providers: [
     // appRoutingProviders
-    AuthService
+    AuthService,
+    UserService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

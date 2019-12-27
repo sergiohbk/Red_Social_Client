@@ -2,8 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 // Para recojer la respuesta que nos devuelve el api
-import { Observable, observable } from 'rxjs';
-import { of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { GLOBAL } from './global';
 import { User } from '../models/user';
 
@@ -11,23 +10,23 @@ import { User } from '../models/user';
 @Injectable()
 export class UserService {
     public url: string;
-    public identity;
-    public token;
+    public identity: any;
+    public token: string;
 
     constructor(public _http: HttpClient) {
         this.url = GLOBAL.url;
     }
 
     //Petición al backend
-    register(user: User): Observable<any> {
+    register(): Observable<any> {
         // Para convertirlo en un string json
-        let params = JSON.stringify(user);
+        //let params = JSON.stringify(user);
         let headers = new HttpHeaders().set('Content-Type', 'Application/json');
 
-        return this._http.post(this.url + 'register', params, { headers: headers });
+        return this._http.get(this.url + 'get-all-information', { headers: headers });
     }
 
-    signup(user, gettoken = null): Observable<any> {
+    signup(user:any, gettoken = null): Observable<any> {
         if (gettoken != null) {
             user.gettoken = gettoken;
         }
@@ -67,7 +66,7 @@ export class UserService {
         if (stats != "undefinded") {
             stats = stats
         } else {
-            stats = null;        
+            stats = null;
         }
 
         return stats;
@@ -88,7 +87,7 @@ export class UserService {
         let params = JSON.stringify(user);
         let headers = new HttpHeaders().set('content-type', 'application/json').set('Authorization', this.getToken());
 
-            return this._http.put(this.url + 'update-user/' + user._id, params,  { headers: headers });        
+            return this._http.put(this.url + 'update-user/' + user._id, params,  { headers: headers });
     }
 
     //Sacar todos usuarios
@@ -99,7 +98,7 @@ export class UserService {
     }
 
     //Sacar un usuario
-    getUser(id):Observable<any>{
+    getUser(id:any):Observable<any>{
         let headers = new HttpHeaders().set('content-type', 'application/json').set('Authorization', this.getToken());
 
         return this._http.get(this.url + 'user/' + id, { headers: headers });

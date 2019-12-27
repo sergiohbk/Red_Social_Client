@@ -56,7 +56,6 @@ export class RegisterComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('Componente de register cargado...');
 
     }
 
@@ -74,7 +73,7 @@ export class RegisterComponent implements OnInit {
             this.miFormulario.value.condiciones
         );
 
-        this._userService.register(this.user).subscribe(
+        this._userService.register().subscribe(
             response => {
                 if (response.user && response.user._id) {
                     //  console.log(response.user);
