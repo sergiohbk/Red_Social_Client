@@ -14,9 +14,6 @@
         <div class="col-md-6">
             <box-publication class="d-none d-md-block"></box-publication>
             <publications></publications>
-            <pre *ngIf="auth.userProfile$ | async as profile">
-              <code>{{ profile | json }}</code>
-            </pre>
         </div>
     </div>
     <!-- <timeline></timeline> -->

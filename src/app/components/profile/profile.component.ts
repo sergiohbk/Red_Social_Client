@@ -5,6 +5,7 @@ import { Follow } from '../../models/follow';
 import { UserService } from '../../services/user.service';
 import { FollowService } from '../../services/follow.service';
 import { GLOBAL } from '../../services/global';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
     selector: 'profile',
@@ -23,24 +24,34 @@ export class ProfileComponent implements OnInit {
     public url;
     public followed;
     public following;
+    public userData;
 
     constructor(
         private _route: ActivatedRoute,
         private _router: Router,
         private _userService: UserService,
-        private _followService: FollowService
+        private _followService: FollowService,
+        private auth:AuthService
     ) {
-        this.title = 'Perfil';
-        this.identity = this._userService.getIdentity();
-        this.token = this._userService.getToken();
-        this.url = GLOBAL.url;
-        this.followed = false;
-        this.following = false;
+      this.title = 'Perfil';
+      this.url = GLOBAL.url;
+
+      this.userData = new User(
+        "",
+        "",
+        "",
+      );
     }
 
     ngOnInit() {
-        console.log('profile.component cargado correctamente');
-        this.loadPage();
+      this.getTheProfileData();
+      console.log(this.userData);
+    }
+
+    getTheProfileData(){
+      this._userService.getSelfUserData().subscribe(user =>{
+        this.userData = user;
+      });
     }
 
     loadPage() {
@@ -120,7 +131,7 @@ export class ProfileComponent implements OnInit {
     }
 
     public followUserOver;
-    
+
     mouseEnter(user_id){
         this.followUserOver = user_id;
     }
@@ -129,4 +140,3 @@ export class ProfileComponent implements OnInit {
         this.followUserOver = 0;
     }
 }
-

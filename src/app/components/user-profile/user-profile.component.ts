@@ -6,6 +6,8 @@ import { Publication } from '../../models/publication';
 import { PublicationService } from '../../services/publication.service';
 import { Like } from '../../models/like';
 import { AvatarModule } from 'ngx-avatar';
+import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -14,28 +16,40 @@ import { AvatarModule } from 'ngx-avatar';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  public identity;
-  public token;
-  public stats;
-  public url;
-  public status;
+  public identity: any;
+  public token: any;
+  public stats: any;
+  public url: string;
+  public status: any;
   public like: Like;
+  public userData: User;
 
 
   constructor(
       private _userService: UserService,
       private _route: ActivatedRoute,
       private _router: Router,
+      private auth:AuthService
 
   ) {
-      this.identity = this._userService.getIdentity();
-      this.token = this._userService.getToken();
-      this.stats = this._userService.getStats();
       this.url = GLOBAL.url;
+      this.userData = new User(
+        "",
+        "",
+        "",
+      );
   }
 
   ngOnInit() {
-      console.log("UserProfile.component a sido cargado");
+      this.getTheProfileData();
+  }
+
+  getTheProfileData(){
+    this._userService.getSelfUserData().subscribe(user =>{
+      this.userData._id = user._id;
+      this.userData.image = user.image;
+      this.userData.name = user.name;
+    });
   }
 
   onSubmit() {

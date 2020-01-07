@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit, DoCheck{
     private _route: ActivatedRoute,
     private _router: Router,
     private _userService:UserService,
-    public auth:AuthService
+    private auth:AuthService
   ){
     this.title = "RoleMaster";
     this.url = GLOBAL.url;

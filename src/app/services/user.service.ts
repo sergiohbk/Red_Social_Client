@@ -26,14 +26,18 @@ export class UserService {
         return this._http.get(this.url + 'get-all-information', { headers: headers });
     }
 
-    signup(user:any, gettoken = null): Observable<any> {
-        if (gettoken != null) {
-            user.gettoken = gettoken;
-        }
-        let params = JSON.stringify(user);
+    signup(): Observable<any> {
+
         let headers = new HttpHeaders().set('Content-Type', 'Application/json');
 
-        return this._http.post(this.url + 'login', params, { headers: headers });
+        return this._http.post(this.url + 'login', { headers: headers });
+    }
+
+    getSelfUserData(): Observable<any> {
+
+        let headers = new HttpHeaders().set('Content-Type', 'Application/json');
+
+        return this._http.get(this.url + 'getSelfUserData', { headers: headers });
     }
 
     getIdentity() {

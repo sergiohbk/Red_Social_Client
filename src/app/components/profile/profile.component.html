@@ -2,12 +2,18 @@
     <h1>{{ title }}</h1>
     <div id="data-profile" *ngIf="user">
         <div class="avatar">
-            <img src="{{ url + 'get-image-user/' + user.image }}" *ngIf="user.image">
+            <img *ngIf="userData.image" src="{{ url + 'get-image-user/' + userData.image }}">
+            <pre *ngIf="auth.userProfile$ | async as profile">
+              <img *ngIf="!userData.image" src="{{profile.picture}}">
+            </pre>
             <!-- <img src="assets/user.png" *ngIf="!user.image"> -->
         </div>
 
         <div class="user-name">
-            <p>{{user.name}}</p>
+            <p *ngIf="userData.name">{{userData.name}}</p>
+            <pre *ngIf="auth.userProfile$ | async as profile">
+              <p *ngIf="!userData.name">{{profile.name}}</p>
+            </pre>
 
             <div class="follow">
                 <!-- <div class="badge badge-secondary" *ngIf="followed">

@@ -14,11 +14,11 @@ export class CallbackComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.sus();
+    this.loginOrRegister();
   }
 
-  sus(){
-    this._userService.register().subscribe(response =>{
+  loginOrRegister(){
+    this._userService.signup().subscribe(response =>{
       console.log(response);
     });
   }

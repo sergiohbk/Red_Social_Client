@@ -38,8 +38,6 @@
 
                     <a *ngIf="!auth.loggedIn" (click)="auth.login()" [routerLinkActive]="['active']"><i class="fas fa-sign-in-alt"></i>
                       <span id="icon"> Login</span></a>
-                    <a *ngIf="!auth.loggedIn" href="" [routerLink]="['./registro']" [routerLinkActive]="['active']"><i class="fas fa-user"></i>
-                      <span id="icon"> Registro</span></a>
 
                     <a *ngIf="auth.loggedIn" href="" data-toggle="modal" data-target="#myModal"><i class="fas fa-cog"></i><span
                       id="icon"></span></a>

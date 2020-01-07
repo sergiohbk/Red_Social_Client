@@ -6,10 +6,15 @@
     <!-- <img class="rounded-circle img-fluid mx-auto img-thumbnail d-block mt-3" src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image">
         <img class="rounded-circle img-fluid mx-auto img-thumbnail d-block mt-3" src="assets/user.jpg" *ngIf="!identity.image"> -->
 
-    <ngx-avatar class="text-center mt-2" src="{{ url + 'get-image-user/' + identity.image }}" size="30% " [round]="true" *ngIf="identity.image"></ngx-avatar>
-    <ngx-avatar class="text-center mt-2" src="assets/user.jpg" size="30% " [round]="true" *ngIf="!identity.image"></ngx-avatar>
+    <ngx-avatar class="text-center mt-2" src="{{ url + 'get-image-user/' + userData.image }}" size="30% " [round]="true" *ngIf="userData.image"></ngx-avatar>
+    <pre *ngIf="auth.userProfile$ | async as profile">
+      <ngx-avatar class="text-center mt-2" src="{{profile.picture}}" size="30% " [round]="true" *ngIf="!userData.image"></ngx-avatar>
+    </pre>
 
-    <h5 class="text-center mt-3 " id="letraColor ">{{ identity.name }} ({{ identity.nick }})</h5>
+    <h5 *ngIf="userData.name" class="text-center mt-3 " id="letraColor ">{{ userData.name }}</h5>
+    <pre *ngIf="auth.userProfile$ | async as profile">
+      <h5 *ngIf="!userData.name" class="text-center mt-3 " id="letraColor ">{{ profile.name }}</h5>
+    </pre>
     <div class="text-center ">
         <div class="row ">
             <div class="col-6 ">
