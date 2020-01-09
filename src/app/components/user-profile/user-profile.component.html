@@ -7,14 +7,11 @@
         <img class="rounded-circle img-fluid mx-auto img-thumbnail d-block mt-3" src="assets/user.jpg" *ngIf="!identity.image"> -->
 
     <ngx-avatar class="text-center mt-2" src="{{ url + 'get-image-user/' + userData.image }}" size="30% " [round]="true" *ngIf="userData.image"></ngx-avatar>
-    <pre *ngIf="auth.userProfile$ | async as profile">
-      <ngx-avatar class="text-center mt-2" src="{{profile.picture}}" size="30% " [round]="true" *ngIf="!userData.image"></ngx-avatar>
-    </pre>
+    <ngx-avatar class="text-center mt-2" src="{{profile.picture}}" size="30% " [round]="true" *ngIf="!userData.image && auth.userProfile$ | async as profile"></ngx-avatar>
 
     <h5 *ngIf="userData.name" class="text-center mt-3 " id="letraColor ">{{ userData.name }}</h5>
-    <pre *ngIf="auth.userProfile$ | async as profile">
-      <h5 *ngIf="!userData.name" class="text-center mt-3 " id="letraColor ">{{ profile.name }}</h5>
-    </pre>
+    <!-- <pre *ngIf="auth.userProfile$ | async as profile"> -->
+    <h5 *ngIf="!userData.name && auth.userProfile$ | async as profile"  class="text-center mt-3 " id="letraColor ">{{ profile.name }}</h5>
     <div class="text-center ">
         <div class="row ">
             <div class="col-6 ">
