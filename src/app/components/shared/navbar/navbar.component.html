@@ -10,9 +10,11 @@
     <header>
         <div class="container">
             <div class="row justify-content-start">
-                <div class="col-auto logo d-none d-lg-block">
+              <!-- [ngClass]="{ 'col-12 text-center':!auth.loggedIn, 'col-auto d-none d-lg-block':auth.loggedIn -->
+              <!-- col-auto logo d-block d-lg-block -->
+                <div [ngClass]="{ 'col-auto ml-3':!auth.loggedIn, 'col-auto d-none d-lg-block':auth.loggedIn}">
                     <a href="">
-                        <img src="../../../assets/logo.png" alt="">
+                        <img width="80px;" src="../../../assets/logo.png" alt="">
                     </a>
                 </div>
 
@@ -30,14 +32,13 @@
                         </div>
                     </form>
                 </div>
-
+                <!-- [ngClass]="{'col-3 menulog': !auth.loggedIn ,'col-12 col-sm-3 col-md-4 col-lg-4 menu d-flex justify-content-between ml-auto': auth.loggedIn}" -->
                 <div class="col-12 col-sm-3 col-md-4 col-lg-4 menu d-flex justify-content-between ml-auto">
                     <a *ngIf="auth.loggedIn" href="" [routerLink]="['./home']" [routerLinkActive]="['active']"><i class="fas fa-home"></i><span id="icon"> Inicio</span></a>
-                    <a *ngIf="auth.loggedIn" href="" [routerLink]="['./home']" [routerLinkActive]="['active']"><i class="fas fa-network-wired"></i><span id="icon"> Salas</span></a>
+                    <a *ngIf="auth.loggedIn" href="" [routerLink]="['./salas']" [routerLinkActive]="['active']"><i class="fas fa-network-wired"></i><span id="icon"> Salas</span></a>
                     <a *ngIf="auth.loggedIn" href="" [routerLink]="['./gente']" [routerLinkActive]="['active']"><i class="fas fa-bell"></i><span id="icon"> Notificaciones</span></a>
 
-                    <a *ngIf="!auth.loggedIn" (click)="auth.login()" [routerLinkActive]="['active']"><i class="fas fa-sign-in-alt"></i>
-                      <span id="icon"> Login</span></a>
+                    <a *ngIf="!auth.loggedIn" (click)="auth.login()" [routerLinkActive]="['active']" style="margin-left: auto;"><i class="fas fa-sign-in-alt"></i></a>
 
                     <a *ngIf="auth.loggedIn" href="" data-toggle="modal" data-target="#myModal"><i class="fas fa-cog"></i><span
                       id="icon"></span></a>
@@ -55,19 +56,15 @@
                                     <a href="" id="color-letras"><span>Perfil</span></a><br>
                                     <a href="" id="color-letras"><span>Configuración de privacidad</span></a><br>
                                     <a href="" id="color-letras"><span>Ajustes</span></a><br>
-                                    <a id="color-letras" data-dismiss="modal" (click)="logOut()">Cerrar sesión</a>
+                                    <a id="color-letras" data-dismiss="modal" (click)="auth.logout()">Cerrar sesión</a>
                                     <!-- </center> -->
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
-
     </header>
 
     <main>

@@ -9,7 +9,7 @@ header {
 }
 
 header .logo img {
-    width: 80px;
+    width: 100px;
 }
 
 /* Buscar */
@@ -71,6 +71,16 @@ header .menu a:hover {
     }
 }
 
+
+/* Menu login */
+header .menulog a {
+    color: rgb(255, 255, 255, .8);
+    text-decoration: none;
+}
+
+header .menulog a:hover {
+    color: #ffffff;
+}
 
 #img-profile {
     width: 10rem;
