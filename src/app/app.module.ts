@@ -33,6 +33,8 @@ import { CallbackComponent } from './components/callback/callback.component';
 import {AuthService} from './services/auth.service';
 import { UserService } from './services/user.service';
 import { RouterModule } from '@angular/router';
+import { SalasComponent } from './components/salas/salas.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 //Metemos los componentes para poder usarlos.
 @NgModule({
@@ -53,7 +55,9 @@ import { RouterModule } from '@angular/router';
     BoxPublicationComponent,
     ListaPersonajesComponent,
     RolesMasActivosComponent,
-    CallbackComponent
+    CallbackComponent,
+    SalasComponent,
+    ChatComponent
 
 
   ],
