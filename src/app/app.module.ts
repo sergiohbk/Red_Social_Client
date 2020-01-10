@@ -35,6 +35,8 @@ import { UserService } from './services/user.service';
 import { RouterModule } from '@angular/router';
 import { SalasComponent } from './components/salas/salas.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { GameBoardComponent } from './components/game-board/game-board.component';
+import { OptionBoardComponent } from './components/option-board/option-board.component';
 
 //Metemos los componentes para poder usarlos.
 @NgModule({
@@ -57,7 +59,9 @@ import { ChatComponent } from './components/chat/chat.component';
     RolesMasActivosComponent,
     CallbackComponent,
     SalasComponent,
-    ChatComponent
+    ChatComponent,
+    GameBoardComponent,
+    OptionBoardComponent
 
 
   ],
