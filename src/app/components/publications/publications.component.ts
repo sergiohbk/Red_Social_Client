@@ -45,8 +45,8 @@ export class PublicationsComponent implements OnInit {
         this.getPublications(this.page);
     }
 
-    getPublications(page, adding = false) {
-        this._publicationService.getPublications(this.token, page).subscribe(
+    getPublications(page: number, adding = false) {
+        this._publicationService.getPublications(page).subscribe(
             response => {
                 if (response.publications) {
                     this.total = response.total_items;
@@ -55,11 +55,13 @@ export class PublicationsComponent implements OnInit {
 
                     if(!adding){
                         this.publications = response.publications;
+                        console.log(this.publications);
                     }else{
                         var arrayA = this.publications;
                         var arrayB = response.publications;
 
                         this.publications = arrayA.concat(arrayB);
+                        console.log(this.publications);
 
                         // ANIMAR PUBLICACIONES CUANDO PULSAS BOTON VER MAS PUBLICACIONES
                         // $("html", "body").animate({scrollTop: $('body').prop("scrollHeight")}, 500);
@@ -81,7 +83,7 @@ export class PublicationsComponent implements OnInit {
             }
         );
     }
-    
+
     public noMore = false;
     viewMore(){
         if(this.publications.length == this.total){

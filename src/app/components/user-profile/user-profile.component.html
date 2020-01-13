@@ -6,8 +6,8 @@
     <!-- <img class="rounded-circle img-fluid mx-auto img-thumbnail d-block mt-3" src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image">
         <img class="rounded-circle img-fluid mx-auto img-thumbnail d-block mt-3" src="assets/user.jpg" *ngIf="!identity.image"> -->
 
-    <ngx-avatar class="text-center mt-2" src="{{ url + 'get-image-user/' + userData.image }}" size="30% " [round]="true" *ngIf="userData.image"></ngx-avatar>
-    <ngx-avatar class="text-center mt-2" src="{{profile.picture}}" size="30% " [round]="true" *ngIf="!userData.image && auth.userProfile$ | async as profile"></ngx-avatar>
+    <ngx-avatar class="text-center mt-2" src="{{ url + 'get-image-user/' + userData.image }}" size="50% " [round]="true" *ngIf="userData.image"></ngx-avatar>
+    <ngx-avatar class="text-center mt-2" src="{{profile.picture}}" size="50% " [round]="true" *ngIf="!userData.image && auth.userProfile$ | async as profile"></ngx-avatar>
 
     <h5 *ngIf="userData.name" class="text-center mt-3 " id="letraColor ">{{ userData.name }}</h5>
     <!-- <pre *ngIf="auth.userProfile$ | async as profile"> -->

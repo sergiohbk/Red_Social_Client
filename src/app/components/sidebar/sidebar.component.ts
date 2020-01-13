@@ -37,7 +37,7 @@ export class SidebarComponent implements OnInit {
         this.token = this._userService.getToken();
         this.stats = this._userService.getStats();
         this.url = GLOBAL.url;
-        this.publication = new Publication("", "", "", "", this.identity._id);
+        this.publication = new Publication("", "", "", "", "", "");
 
         // this.miFormulario = this.formBuilder.group({
         //     text: ['', [Validators.required]]

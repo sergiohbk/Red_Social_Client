@@ -22,17 +22,16 @@ export class PublicationService {
         return this._http.post(this.url + 'publication', params, { headers: headers });
     }
 
-    getPublications(token, page = 1):Observable<any>{
-        let headers = new HttpHeaders().set('Content-Type', 'aplication/json')
-            .set('Authorization', token);
+    getPublications(page = 1):Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type', 'aplication/json');
 
-            return this._http.get(this.url + 'publications/' + page, { headers: headers });        
+            return this._http.get(this.url + 'publications/' + page, { headers: headers });
     }
 
     deletePublication(token, id):Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'aplication/json')
             .set('Authorization', token);
 
-            return this._http.delete(this.url + 'publication/' + id, { headers: headers });        
+            return this._http.delete(this.url + 'publication/' + id, { headers: headers });
     }
 }
