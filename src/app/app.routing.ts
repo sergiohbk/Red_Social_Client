@@ -12,6 +12,7 @@ import { UsersComponent } from './components/users/users.components';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SalasComponent } from './components/salas/salas.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 import { CallbackComponent } from './components/callback/callback.component';
 import { AuthGuard } from './auth.guard';
 
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     {path: 'timeline', component: TimelineComponent},
     {path: 'perfil/:id', component: ProfileComponent},
     {path: 'salas', component: SalasComponent},
+    {path: 'notificaciones', component: NotificationsComponent},
     {path: 'callback', component: CallbackComponent},
     {path: '**', component: HomeComponent}
 ];

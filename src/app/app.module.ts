@@ -37,6 +37,7 @@ import { SalasComponent } from './components/salas/salas.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { GameBoardComponent } from './components/game-board/game-board.component';
 import { OptionBoardComponent } from './components/option-board/option-board.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 //Metemos los componentes para poder usarlos.
 @NgModule({
@@ -61,7 +62,8 @@ import { OptionBoardComponent } from './components/option-board/option-board.com
     SalasComponent,
     ChatComponent,
     GameBoardComponent,
-    OptionBoardComponent
+    OptionBoardComponent,
+    NotificationsComponent
 
 
   ],
