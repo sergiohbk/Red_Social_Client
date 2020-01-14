@@ -46,7 +46,7 @@ export class TimelineComponent implements OnInit {
     }
 
     getPublications(page, adding = false) {
-        this._publicationService.getPublications(this.token, page).subscribe(
+        this._publicationService.getPublications(page).subscribe(
             response => {
                 if (response.publications) {
                     this.total = response.total_items;
@@ -81,7 +81,7 @@ export class TimelineComponent implements OnInit {
             }
         );
     }
-    
+
     public noMore = false;
     viewMore(){
         if(this.publications.length == this.total){

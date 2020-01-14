@@ -35,21 +35,20 @@
         </button>
     </p>
 </div> -->
-
-
+<h5 *ngIf="publications|async as pub">esto son publicaciones: {{pub}} </h5>
 <div *ngFor="let publication of publications" class="item-publication">
     <div class="card mt-2">
         <div class="card-body">
             <div class="row">
 
                 <div style="margin-bottom: 10px;" class="col-3 col-sm-3 col-md-2">
-                    <ngx-avatar src="{{ url + 'get-image-user/' + identity.image }}" size="30% " [round]="true" *ngIf="identity.image"></ngx-avatar>
-                    <ngx-avatar src="assets/user.jpg" size="100% " [round]="true" *ngIf="!identity.image"></ngx-avatar>
+                    <!-- <ngx-avatar src="{{ url + 'get-image-user/' + identity.image }}" size="30% " [round]="true" *ngIf="identity.image"></ngx-avatar>
+                    <ngx-avatar src="assets/user.jpg" size="100% " [round]="true" *ngIf="!identity.image"></ngx-avatar> -->
                 </div>
 
                 <div class="col-md-3">
                     <h4 style="margin-top: 10px;">{{ publication.user.name }}</h4>
-                    <span>({{ publication.user.nick }})</span>
+                    <span>()</span>
                 </div>
 
             </div>
