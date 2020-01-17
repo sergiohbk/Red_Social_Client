@@ -14,3 +14,7 @@
   float: right;
   margin-top: 5px;
 }
+
+textarea {
+  resize: none;
+}
